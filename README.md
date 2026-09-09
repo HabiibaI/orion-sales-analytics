@@ -194,11 +194,17 @@ stop agreeing.
 the raw source:
 
 ```
-row count survives the pipeline      298,246 = 298,246      pass
-total revenue reconciles         83,535,101.76 = same       pass
-total quantity reconciles            417,347 = 417,347      pass
-foreign key violations                     0                pass
-every sale has a matching calendar day     0                pass
+CHECK                                               EXPECTED        ACTUAL
+----------------------------------------------------------------------------
+row count survives the pipeline                      298,246       298,246   pass
+total revenue reconciles                         83535101.76   83535101.76   pass
+total quantity reconciles                            417,347       417,347   pass
+foreign key violations                                     0             0   pass
+every sale has a matching calendar day                     0             0   pass
+product keys are unique                                2,495         2,495   pass
+customer keys are unique                               8,868         8,868   pass
+geography is keyed on city+state+country                 306           306   pass
+no customer is left unclassified                       8,868         8,868   pass
 ```
 
 The revenue figure is read back out of the SQLite database and compared with the
@@ -215,22 +221,13 @@ the fix would be to stream the array one record at a time instead.
 
 ## The data model
 
-Nine tables, ten relationships, all many-to-one with single-direction filtering.
+Nine tables and ten relationships, all many-to-one with single-direction
+filtering. The model view in the `.pbix` shows the full layout.
 
-```
-   dim_year(2)        dim_brand(11)      dim_country(3)
-        |                   |                   |
-        v                   v                   v
-   dim_date(731)     dim_product(2,495)  dim_geography(306)
-        |                   |                   |
-        +--------> fact_sales (298,246) <-------+
-                        ^
-                  dim_customer (8,868)
-
-   dim_year -----> fact_forecast (33) <----- dim_brand
-                          ^
-                     dim_country
-```
+`fact_sales` is the centre of the star, with `dim_date`, `dim_product`,
+`dim_customer` and `dim_geography` around it. Three smaller tables, `dim_year`,
+`dim_brand` and `dim_country`, exist only so that `fact_forecast` can join the
+model at all.
 
 ### The granularity problem
 

@@ -1,0 +1,34 @@
+ForecastKey,Year,CountryRegion,Brand,ForecastAmount
+1,2009,China,A. Datum,201487
+2,2009,China,Adventure Works,399490
+3,2009,China,Contoso,1173308
+4,2009,China,Fabrikam,790074
+5,2009,China,Litware,437443
+6,2009,China,Northwind Traders,125153
+7,2009,China,Proseware,567070
+8,2009,China,Southridge Video,161494
+9,2009,China,Tailspin Toys,58013
+10,2009,China,The Phone Company,192708
+11,2009,China,Wide World Importers,287140
+12,2009,Germany,A. Datum,163113
+13,2009,Germany,Adventure Works,358333
+14,2009,Germany,Contoso,648264
+15,2009,Germany,Fabrikam,901946
+16,2009,Germany,Litware,465830
+17,2009,Germany,Northwind Traders,112925
+18,2009,Germany,Proseware,340014
+19,2009,Germany,Southridge Video,176339
+20,2009,Germany,Tailspin Toys,171986
+21,2009,Germany,The Phone Company,130420
+22,2009,Germany,Wide World Importers,162140
+23,2009,United States,A. Datum,1413184
+24,2009,United States,Adventure Works,4227349
+25,2009,United States,Contoso,5306331
+26,2009,United States,Fabrikam,6975799
+27,2009,United States,Litware,3380755
+28,2009,United States,Northwind Traders,673840
+29,2009,United States,Proseware,2285575
+30,2009,United States,Southridge Video,1305722
+31,2009,United States,Tailspin Toys,370525
+32,2009,United States,The Phone Company,1910593
+33,2009,United States,Wide World Importers,3130149

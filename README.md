@@ -12,6 +12,20 @@ The source data covers 1 January 2008 to 31 December 2009: 298,246 sales
 records (178 MB) and 33 forecast records. Total revenue across both years is
 $83,535,101.76. The whole pipeline runs in about 30 seconds.
 
+## Deliverables
+
+| asked for | where it is |
+|---|---|
+| Python ETL script | `etl/etl_pipeline.py` |
+| Structured data outputs / sample database | `output/` : 9 CSV tables, `orion_sales.db`, `schema.sql` |
+| Data model | `output/schema.sql` for the relational model, and the star schema inside the `.pbix`. Explained in [the data model](#the-data-model) below |
+| Power BI dashboard | `Orion Sales Dashboard.pbix` |
+| Documentation of ETL logic, model and assumptions | this file |
+
+If you only read one section, read [what I found in the data](#what-i-found-in-the-data).
+Four of the six findings changed the numbers, and one of them would have
+deleted $41M of real revenue if I had got it wrong.
+
 ## Running it
 
 ```bash

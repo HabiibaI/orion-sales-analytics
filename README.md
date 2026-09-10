@@ -14,17 +14,13 @@ $83,535,101.76. The whole pipeline runs in about 30 seconds.
 
 ## Deliverables
 
-| asked for | where it is |
-|---|---|
-| Python ETL script | `etl/etl_pipeline.py` |
-| Structured data outputs / sample database | `output/` : 9 CSV tables, `orion_sales.db`, `schema.sql` |
-| Data model | `output/schema.sql` for the relational model, and the star schema inside the `.pbix`. Explained in [the data model](#the-data-model) below |
-| Power BI dashboard | `Orion Sales Dashboard.pbix` |
-| Documentation of ETL logic, model and assumptions | this file |
-
-If you only read one section, read [what I found in the data](#what-i-found-in-the-data).
-Four of the six findings changed the numbers, and one of them would have
-deleted $41M of real revenue if I had got it wrong.
+- **ETL script**: `etl/etl_pipeline.py`
+- **Data outputs and sample database**: `output/`, containing 9 CSV tables,
+  `orion_sales.db` and `schema.sql`
+- **Data model**: `schema.sql` has the relational schema with keys and
+  constraints, the star schema itself is in the `.pbix`, and the reasoning
+  behind both is in [the data model](#the-data-model) below
+- **Dashboard**: `Orion Sales Dashboard.pbix`
 
 ## Running it
 
